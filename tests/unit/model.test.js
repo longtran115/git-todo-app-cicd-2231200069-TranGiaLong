@@ -9,11 +9,17 @@ describe('TodoService Unit Tests', () => {
         // This is a bit of a hack to reset the singleton for testing purposes
         service.todos = [];
     });
+   
 
     test('should add a new todo', () => {
         // TODO: Call the addTodo method with some text.
         // Then, assert that the service's todos array has a length of 1.
         // Assert that the text of the first todo matches the input text.
+        text = "Some text"
+        service.addTodo("Some text");
+        expect(service.todos.length).toBe(1);
+        expect(service.todos[0].text).toMatch(text);
+
     });
 
     test('should toggle the completed state of a todo', () => {
